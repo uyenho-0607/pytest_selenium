@@ -1,0 +1,7 @@
+pytest
+pytest-selenium
+allure-pytest
+pyyaml
+pytest-check
+colorama
+Appium-Python-client
