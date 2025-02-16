@@ -15,7 +15,7 @@ def soft_assert(*args):
         logger.error(msg)
 
         for driver in DriverList.web_driver:
-            allure_util.capture_screenshot(driver)
+            allure_util.capture_and_attach_screenshot(driver)
 
         failed_msg = check.check_log.get_failures()[-1]
         failed_msg = failed_msg.rsplit(": ", 1)[1]

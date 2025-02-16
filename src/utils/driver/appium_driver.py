@@ -10,15 +10,19 @@ from src.data.project_info import DriverList
 from src.utils.logging_util import logger
 
 
-def start_appium_server(*, host="localhost", port=4723):
+def start_appium_server(*, host="localhost", port=4723, wda_port=8100):
     # https://appium.io/docs/en/writing-running-appium/server-args/
     kill_command = f"lsof -ti :{port} | xargs kill -9"
+
     subprocess.run(kill_command, shell=True, check=True)
+    subprocess.run(f"lsof -ti :{wda_port} | xargs kill -9", shell=True, check=True)
+
     appium_service = AppiumService()
     args = [
         "-pa", "/wd/hub",
         "--address", host,
         "--port", str(port),
+        "--driver-xcuitest-webdriveragent-port", str(wda_port),
     ]
 
     logger.debug("- Starting appium server... ")
@@ -36,12 +40,17 @@ def init_appium_driver(port=4723):
     # https://appium.io/docs/en/2.0/guides/caps/
 
     options = XCUITestOptions()
-    options.platform_name = "iOs"
-    options.platform_version = "17.2"
-    options.device_name = "iPhone 15"
-    options.automation_name = "XCUITest"
+    options.platform_name = "iOS"
+    options.platform_version = "16.1.1"  # simulator
+    options.device_name = "iPhone 15"  # simulator
+    # options.udid = "00008101-00044C5A21F8001E"  # real device
+    options.bundle_id = "com.floware.flo.staging"
+    # options.automation_name = "XCUITest"
     options.app = "/Users/uyenhn/Downloads/apps/FloiOS_0.9.52_202403141200.app"
     options.new_command_timeout = 30000
+    # options.use_new_wda = True
+    options.no_reset = True
+
     DriverList.appium_service = start_appium_server()
 
     try:

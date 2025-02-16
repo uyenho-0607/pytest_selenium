@@ -9,7 +9,7 @@ from src.data.project_info import DriverList
 from src.utils.logging_util import logger
 
 
-def capture_screenshot(driver, name="screenshot"):
+def capture_and_attach_screenshot(driver, name="screenshot"):
     allure.attach(
         driver.get_screenshot_as_png(),
         name=name,
@@ -59,18 +59,9 @@ def custom_allure_report(allure_dir):
             with open(file_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
 
-                # failed_attachments = [
-                #     item for item in data.get("attachments", []) if item["name"] == "screenshot"
-                # ]
-
                 failed_attachments = list(
                     filter(lambda x: x["name"] == "screenshot", data.get("attachments", []))
                 )
-
-                # broken_attachments = [
-                #     item for item in data.get("attachments", []) if item["name"] == "broken"
-                # ]
-
                 # custom failed verify steps
                 if data["status"] == "failed":
 

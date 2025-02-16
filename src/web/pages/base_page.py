@@ -1,6 +1,6 @@
-from src.utils.elements.web import WebElements
+from src.utils.actions.web import WebActions
 
 
 class BasePage:
-    def __init__(self, elements):
-        self._elements: WebElements = elements
+    def __init__(self, actions):
+        self.actions: WebActions = actions

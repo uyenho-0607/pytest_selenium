@@ -3,3 +3,12 @@ url: https://flo.k8s.flodev.net/#/flo
 user: auto763e90_web_dev
 domain: flodev.net
 password: QWFAMTIzNDU=
+
+web:
+  ...
+
+mac:
+  ...
+
+ios:
+  device_udid: "00008101-00044C5A21F8001E"
