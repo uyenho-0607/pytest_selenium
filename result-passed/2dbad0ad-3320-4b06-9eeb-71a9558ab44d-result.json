@@ -1,0 +1,77 @@
+{
+    "name": "test",
+    "status": "passed",
+    "steps": [
+        {
+            "name": "Step 1: Create channel with title: 'Auto Title - OIj0JlBMGP'",
+            "status": "passed",
+            "start": 1740357208131,
+            "stop": 1740357208131
+        },
+        {
+            "name": "Step 2: Add participant 1: 'auto763e90_web_test1'",
+            "status": "passed",
+            "steps": [
+                {
+                    "name": "Verify participant 1: 'auto763e90_web_test1' is displayed in call view",
+                    "status": "passed",
+                    "start": 1740357208132,
+                    "stop": 1740357208132
+                }
+            ],
+            "start": 1740357208131,
+            "stop": 1740357208132
+        },
+        {
+            "name": "Step 3: Add participant 2: 'auto763e90_web_test1'",
+            "status": "passed",
+            "steps": [
+                {
+                    "name": "Verify participant 2: 'auto763e90_web_test2' is displayed in call view",
+                    "status": "passed",
+                    "start": 1740357208132,
+                    "stop": 1740357208132
+                }
+            ],
+            "start": 1740357208132,
+            "stop": 1740357208132
+        }
+    ],
+    "attachments": [],
+    "start": 1740357199470,
+    "stop": 1740357208131,
+    "uuid": "d2bbd297-59c1-4ea0-b91b-1763eda2cc33",
+    "historyId": "6b69e9f01a83652df3b7feb2a8659eb5",
+    "testCaseId": "6b69e9f01a83652df3b7feb2a8659eb5",
+    "fullName": "tests.web.channels.test_02_create_channel_and_add_participants#test",
+    "labels": [
+        {
+            "name": "parentSuite",
+            "value": "tests.web.channels"
+        },
+        {
+            "name": "suite",
+            "value": "test_02_create_channel_and_add_participants"
+        },
+        {
+            "name": "host",
+            "value": "192.168.0.100"
+        },
+        {
+            "name": "thread",
+            "value": "28199-MainThread"
+        },
+        {
+            "name": "framework",
+            "value": "pytest"
+        },
+        {
+            "name": "language",
+            "value": "cpython3"
+        },
+        {
+            "name": "package",
+            "value": "tests.web.channels.test_02_create_channel_and_add_participants"
+        }
+    ]
+}

@@ -41,15 +41,17 @@ def init_appium_driver(port=4723):
 
     options = XCUITestOptions()
     options.platform_name = "iOS"
-    options.platform_version = "16.1.1"  # simulator
+    options.platform_version = "17.2"  # simulator
     options.device_name = "iPhone 15"  # simulator
     # options.udid = "00008101-00044C5A21F8001E"  # real device
     options.bundle_id = "com.floware.flo.staging"
     # options.automation_name = "XCUITest"
     options.app = "/Users/uyenhn/Downloads/apps/FloiOS_0.9.52_202403141200.app"
     options.new_command_timeout = 30000
-    # options.use_new_wda = True
+    # options.use_new_wda = False
+    # options.use_prebuilt_wda = True
     options.no_reset = True
+    options.full_reset = False
 
     DriverList.appium_service = start_appium_server()
 
@@ -64,23 +66,23 @@ def init_appium_driver(port=4723):
         raise WebDriverException(error)
 
 
-def init_mac_driver(port=4723):
+def init_mac_driver(port=4724):
 
-    system_port = 4724
-    kill_command = f"lsof -ti :{system_port} | xargs kill -9"
-    subprocess.run(kill_command, shell=True, check=True)
+    # subprocess.run(f"lsof -ti :{port} | xargs kill -9", shell=True, check=True)
 
     options = Mac2Options()
     options.platform_name = "mac"
     options.automation_name = "mac2"
     options.bundle_id = "com.floware.flomac.internal"
-    options.system_port = system_port
     options.new_command_timeout = 30000
-    DriverList.appium_service = start_appium_server()
+    # DriverList.appium_service = start_appium_server(port=port)
+    port = 4723
 
     try:
 
-        driver = webdriver.Remote(f"http://localhost:{port}/wd/hub", options=options)
+        # driver = webdriver.Remote(f"http://localhost:{port}/wd/hub", options=options)
+        # driver = webdriver.Remote(f"http://172.16.49.12:{port}/wd/hub", options=options)
+        driver = webdriver.Remote(f"http://172.16.49.12:{port}", options=options)
         DriverList.appium_driver.append(driver)
 
         return driver

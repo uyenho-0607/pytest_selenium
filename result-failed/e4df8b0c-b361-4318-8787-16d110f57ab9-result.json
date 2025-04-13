@@ -1,0 +1,100 @@
+{
+    "name": "test",
+    "status": "failed",
+    "statusDetails": {
+        "message": "AssertionError: \u001b[31mFAILURE: \u001b[0mcheck False == True: Element ('xpath', \"//*[contains(@class, 'participant-info') and contains(@title, 'Auto763e90_web_test11')]\") is not displayed\n\n\u001b[31mFAILURE: \u001b[0mcheck False == True: Element ('xpath', \"//*[contains(@class, 'participant-info') and contains(@title, 'Auto763e90_web_test22')]\") is not displayed\n------------------------------------------------------------\nFailed Checks: 2"
+    },
+    "steps": [
+        {
+            "name": "Step 1: Create channel with title: 'Auto Title - YKTaHKTdhU'",
+            "status": "passed",
+            "start": 1740357758499,
+            "stop": 1740357758499
+        },
+        {
+            "name": "Step 2: Add participant 1: 'auto763e90_web_test1'",
+            "status": "failed",
+            "steps": [
+                {
+                    "name": "Verify participant 1: 'auto763e90_web_test1' is displayed in call view",
+                    "status": "failed",
+                    "start": 1740357758499,
+                    "stop": 1740357758499,
+                    "statusDetails": {
+                        "message": "Element ('xpath', \"//*[contains(@class, 'participant-info') and contains(@title, 'Auto763e90_web_test11')]\") is not displayed\n"
+                    },
+                    "attachments": [
+                        {
+                            "name": "screenshot",
+                            "source": "975ad1bd-7da2-40a1-a7ec-74a4d3f4ea61-attachment.png",
+                            "type": "image/png"
+                        }
+                    ]
+                }
+            ],
+            "start": 1740357758499,
+            "stop": 1740357758499
+        },
+        {
+            "name": "Step 3: Add participant 2: 'auto763e90_web_test2'",
+            "status": "failed",
+            "steps": [
+                {
+                    "name": "Verify participant 2: 'auto763e90_web_test2' is displayed in call view",
+                    "status": "failed",
+                    "start": 1740357758499,
+                    "stop": 1740357758499,
+                    "statusDetails": {
+                        "message": "Element ('xpath', \"//*[contains(@class, 'participant-info') and contains(@title, 'Auto763e90_web_test22')]\") is not displayed"
+                    },
+                    "attachments": [
+                        {
+                            "name": "screenshot",
+                            "source": "c755f241-b480-48f6-b7a3-e33155dd0bad-attachment.png",
+                            "type": "image/png"
+                        }
+                    ]
+                }
+            ],
+            "start": 1740357758499,
+            "stop": 1740357758499
+        }
+    ],
+    "attachments": [],
+    "start": 1740357734299,
+    "stop": 1740357758498,
+    "uuid": "fc8996b3-0c4c-40f7-8678-5101dd9987fd",
+    "historyId": "6b69e9f01a83652df3b7feb2a8659eb5",
+    "testCaseId": "6b69e9f01a83652df3b7feb2a8659eb5",
+    "fullName": "tests.web.channels.test_02_create_channel_and_add_participants#test",
+    "labels": [
+        {
+            "name": "parentSuite",
+            "value": "tests.web.channels"
+        },
+        {
+            "name": "suite",
+            "value": "test_02_create_channel_and_add_participants"
+        },
+        {
+            "name": "host",
+            "value": "192.168.0.100"
+        },
+        {
+            "name": "thread",
+            "value": "28733-MainThread"
+        },
+        {
+            "name": "framework",
+            "value": "pytest"
+        },
+        {
+            "name": "language",
+            "value": "cpython3"
+        },
+        {
+            "name": "package",
+            "value": "tests.web.channels.test_02_create_channel_and_add_participants"
+        }
+    ]
+}

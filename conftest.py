@@ -52,7 +52,6 @@ def pytest_sessionstart(session):
 def pytest_sessionfinish(session):
     logger.info("============ pytest_sessionfinish ============ ")
     for driver in DriverList.web_driver:
-        driver.close()
         driver.quit()
 
     for driver in DriverList.appium_driver:
@@ -61,18 +60,18 @@ def pytest_sessionfinish(session):
     if DriverList.appium_service:
         DriverList.appium_service.stop()
 
-    allure_dir = session.config.option.allure_report_dir
-    if allure_dir:
-
-        custom_allure_report(allure_dir)
-        env_data = {
-            "Platform": session.config.getoption("--platform").capitalize(),
-            "Environment": session.config.getoption("--env").capitalize()
-        }
-
-        with open(f"{allure_dir}/environment.properties", "w") as f:
-            for key, value in env_data.items():
-                f.write(f"{key}={value}\n")
+    # allure_dir = session.config.option.allure_report_dir
+    # if allure_dir:
+    #
+    #     custom_allure_report(allure_dir)
+    #     env_data = {
+    #         "Platform": session.config.getoption("--platform").capitalize(),
+    #         "Environment": session.config.getoption("--env").capitalize()
+    #     }
+    #
+    #     with open(f"{allure_dir}/environment.properties", "w") as f:
+    #         for key, value in env_data.items():
+    #             f.write(f"{key}={value}\n")
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)

@@ -37,9 +37,6 @@ class BaseActions:
         except Exception as e:
 
             logger.error(f"Elements with locator {locator} not found!")
-            MsgLog.is_broken = True
-            allure_util.capture_and_attach_screenshot(self._driver, name="broken")
-
             raise Exception(f"Elements with locator {locator} not found!") from e
 
     def safe_find_element(self, locator: tuple, timeout=None, retries=1) -> WebElement:
@@ -68,6 +65,8 @@ class BaseActions:
             except Exception:
                 logger.debug(f"Attempt {i + 1}/{retries} failed for locator {locator}")
 
+        MsgLog.is_broken = True
+        allure_util.capture_and_attach_screenshot(self._driver, name="broken")
         raise Exception(f"Elements not found after {retries} attempt(s)")
 
     def _is_displayed(self, locator: tuple, timeout=None):

@@ -1,0 +1,9 @@
+[32mINFO    [0m pythonLog:logging_util.py:48 - Perform login
+[32mINFO    [0m pythonLog:logging_util.py:48 - Open Channels Page
+[32mINFO    [0m pythonLog:logging_util.py:48 Step 1: Create channel with title: 'Auto Title - OIj0JlBMGP'
+[32mINFO    [0m pythonLog:logging_util.py:48 Step 2: Add participant 1: 'auto763e90_web_test1'
+[32mINFO    [0m pythonLog:logging_util.py:48 Verify participant 1: 'auto763e90_web_test1' is displayed in call view
+[32mINFO    [0m pythonLog:logging_util.py:48 Step 3: Add participant 2: 'auto763e90_web_test1'
+[32mINFO    [0m pythonLog:logging_util.py:48 Verify participant 2: 'auto763e90_web_test2' is displayed in call view
+[32mINFO    [0m pythonLog:logging_util.py:48 - Close Call View
+[32mINFO    [0m pythonLog:logging_util.py:48 - Close Channels Page
